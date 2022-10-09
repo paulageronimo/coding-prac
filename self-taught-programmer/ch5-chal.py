@@ -20,8 +20,26 @@ and two optional parameters
 def params(x:int, y:int, z:int, a=1, b=2):
   print(x, y, z, a, b)
 
+'''
+write a function that converts a string to a float and returns
+the result. 
+
+use exception handling to catch the exception that
+could occur.
+'''
+def str2float(string: str):
+  try:
+    flt = float(string)
+  except ValueError:
+    return "Invalid input. Please try again with only numbers as a string."
+  return flt
+
 if __name__ == '__main__':
   print(square(2))
   stringParam("Howdy world!")
   params(10, 20, 30)
   params(10, 20, 30, 40, 50)
+  print(str2float("Hi! 22"))
+  print(str2float("!0"))
+  print(str2float("22"))
+  print(str2float("2.2"))
