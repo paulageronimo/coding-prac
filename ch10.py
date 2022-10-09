@@ -16,11 +16,17 @@ def hangman(word):
   win = False
   
   print("Welcome to Hangman")
-    
+  guesses = []
   while wrong < len(stages) - 1:
     print("\n")
-    msg = "Guess a letter"
-    char = input(msg)
+    
+    char = input("Guess a letter: ")
+    while char in guesses:
+      print("You already input that letter! Try another one.")
+      char = input("Guess a letter: ")
+    
+    guesses.append(char)
+    
     if char in rletters:
       cind = rletters.index(char)
       board[cind] = char
