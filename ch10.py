@@ -16,8 +16,8 @@ def inputValidaiton(char, guesses):
 def hangman(word):
   wrong = 0
   stages = ["",
-            "________        ",
-            "|               ",
+            "__________      ",
+            "|        |       ",
             "|        |      ",
             "|        0      ",
             "|       /|\     ",
