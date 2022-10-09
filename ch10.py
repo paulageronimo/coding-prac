@@ -1,5 +1,18 @@
 import random
 
+def inputValidaiton(char, guesses):
+  if (len(char) != 1) or (not char.isalpha()) or (char in guesses):
+    print("Invalid input. Why?")
+    if len(char) != 1:
+      print("Input is more than one character.")
+    if not char.isalpha():
+      print("Your input is not an alphabetic letter.")
+    if char in guesses:
+      print("You already input that letter! Try another one.")
+    return False
+  else:
+    return True
+    
 def hangman(word):
   wrong = 0
   stages = ["",
@@ -21,10 +34,12 @@ def hangman(word):
     print("\n")
     
     char = input("Guess a letter: ")
-    while char in guesses:
-      print("You already input that letter! Try another one.")
+    
+    # Input validation
+    while not inputValidaiton(char, guesses):
       char = input("Guess a letter: ")
     
+    char = char.lower()
     guesses.append(char)
     
     if char in rletters:
