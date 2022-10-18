@@ -7,8 +7,8 @@ class Solution:
         i = 0
         s = ""
         while i < len(x):
-            ch=x[i]
-            ns=0
+            ch = x[i]
+            ns = 0
             while i < len(x) and x[i] == ch:
                 ns += 1
                 i += 1
